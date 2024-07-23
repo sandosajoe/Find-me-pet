@@ -1,13 +1,14 @@
 import 'package:fina_me_animal/core/styles.dart';
 import 'package:fina_me_animal/features/home/presentation/manager/cubit.dart';
 import 'package:fina_me_animal/features/home/presentation/manager/state.dart';
+import 'package:fina_me_animal/features/screen2/presentation/views/screen2_home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AnimalCard extends StatelessWidget {
-  const AnimalCard({super.key, required this.imagePath});
+  AnimalCard({super.key, required this.imagePath});
   final String imagePath;
-
+  String dogName = "Rock", dogAge = " 8 months", dogType = "Wild one";
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AppCubit, AppState>(
@@ -37,13 +38,28 @@ class AnimalCard extends StatelessWidget {
                     margin: EdgeInsets.all(13),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(30),
-                      child: Image.asset(
-                        "$imagePath",
-                        fit: BoxFit.cover,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (_) {
+                            return Screen2Home(
+                                imagePath2: imagePath,
+                                dogname2: dogName,
+                                dogType2: dogType,
+                                gogAge2: dogAge);
+                          }));
+                        },
+                        child: Container(
+                          child: Image.asset(
+                            "$imagePath",
+                            fit: BoxFit.contain,
+                          ),
+                        ),
                       ),
                     ),
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(500)),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(500),
+                    ),
                   ),
                   Column(
                     children: [

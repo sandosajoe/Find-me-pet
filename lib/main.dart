@@ -21,6 +21,10 @@ class MyApp extends StatelessWidget {
     return  BlocProvider(
       create: (context)=>AppCubit(),
       child: MaterialApp(
+        // routes:{
+        //   "screen2":(context) => Screen2Home(),
+        //   "home":(context) => MainHome()
+        // } ,
           debugShowCheckedModeBanner: false,
           locale: DevicePreview.locale(context),
           builder: DevicePreview.appBuilder,

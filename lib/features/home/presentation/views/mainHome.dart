@@ -1,6 +1,7 @@
 
 import 'package:fina_me_animal/features/home/presentation/views/widgets/animalListView.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class MainHome extends StatelessWidget {
   const MainHome({super.key});
@@ -22,7 +23,12 @@ class MainHome extends StatelessWidget {
         ),
         backgroundColor: Colors.white,
       ),
-      body: AnimalListView(),
+      body: Column(
+        children: [
+          Text("fhlfi"),
+          Expanded(child: AnimalListView()),
+        ],
+      ),
     );
   }
 }
