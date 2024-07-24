@@ -58,7 +58,7 @@ class ContinueToApp extends StatelessWidget {
                 child: Center(
                     child: Text(
                   "continue to app",
-                  style: Fonts.textStyle1,
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ))),
           )
 

@@ -1,5 +1,7 @@
 
+import 'package:fina_me_animal/features/home/presentation/views/drawer_screen.dart';
 import 'package:fina_me_animal/features/home/presentation/views/widgets/animalListView.dart';
+import 'package:fina_me_animal/features/home/presentation/views/widgets/random_fact.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -9,7 +11,7 @@ class MainHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(249, 255, 255, 255),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Center(
           child: Container(
@@ -23,9 +25,10 @@ class MainHome extends StatelessWidget {
         ),
         backgroundColor: Colors.white,
       ),
+      drawer: Drawer(child: DrawerScreen(),),
       body: Column(
         children: [
-          Text("fhlfi"),
+          RandomFact(),
           Expanded(child: AnimalListView()),
         ],
       ),
